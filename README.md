@@ -1,5 +1,36 @@
 # React + TypeScript + Vite
 
+## Word Add-in local development
+
+Create or refresh the local HTTPS certificate:
+
+```sh
+npm run cert:dev
+```
+
+On macOS, trust the generated local root certificate before loading the add-in in Word:
+
+```sh
+npm run cert:trust:mac
+```
+
+Start the Word task pane app over HTTPS:
+
+```sh
+npm run dev:https
+```
+
+The app is served at `https://127.0.0.1:5173/`.
+
+Sideload the add-in in Word for Mac:
+
+```sh
+mkdir -p "$HOME/Library/Containers/com.microsoft.Word/Data/Documents/wef"
+cp manifest.xml "$HOME/Library/Containers/com.microsoft.Word/Data/Documents/wef/fesji-linter.xml"
+```
+
+Then restart Word, open a document, and choose `Home` > `Add-ins` > `FESJI Document Linter`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

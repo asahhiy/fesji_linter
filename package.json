@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "cert:dev": "node scripts/ensure-dev-cert.mjs",
+    "cert:trust:mac": "node scripts/trust-dev-cert-mac.mjs",
     "dev": "vite",
+    "dev:https": "node scripts/ensure-dev-cert.mjs && vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "vitest",
